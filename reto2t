@@ -1,0 +1,29 @@
+# Registro de nuevos usuarios
+cantidad_usuarios = int(input("¿Cuántos nuevos usuarios desea registrar? "))
+
+for i in range(cantidad_usuarios):
+    print("Registro de usuario #" + str(i+1))
+    nombre = input("Ingrese su nombre(s): ")
+    apellidos = input("Ingrese sus apellidos: ")
+    telefono = input("Ingrese su número de teléfono: ")
+    correo = input("Ingrese su correo electrónico: ")
+
+    # Validación de datos
+    while len(nombre) < 5 or len(nombre) > 50:
+        print("El nombre debe tener entre 5 y 50 caracteres.")
+        nombre = input("Ingrese su nombre(s): ")
+
+    while len(apellidos) < 5 or len(apellidos) > 50:
+        print("Los apellidos deben tener entre 5 y 50 caracteres.")
+        apellidos = input("Ingrese sus apellidos: ")
+
+    while len(telefono) != 10:
+        print("El número de teléfono debe tener 10 dígitos.")
+        telefono = input("Ingrese su número de teléfono: ")
+
+    while len(correo) < 5 or len(correo) > 50:
+        print("El correo electrónico debe tener entre 5 y 50 caracteres.")
+        correo = input("Ingrese su correo electrónico: ")
+
+    # Mensaje de bienvenida
+    print("Hola " + nombre + " " + apellidos + ", en breve recibirás un correo a " + correo + ".")
